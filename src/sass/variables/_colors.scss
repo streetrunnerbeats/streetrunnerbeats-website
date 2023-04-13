@@ -1,0 +1,92 @@
+//•••••••••••••••••••
+// Util Colors
+//•••••••••••••••••••
+
+$shades: (
+	color_primaryBlack: #0c0c0c,
+	color_primaryGrey: #cac7c7,
+	color_primaryGreyHover: #b4b1b1,
+);
+
+$theme-colors: (
+	color_themePrimary: #355776,
+	color_themePrimaryHover: #54728e,
+	color_themeSecondary: rgba(185, 172, 185, 0.67),
+	color_themeSecondaryHover: rgba(185, 172, 185, 0.38),
+	color_themePrimaryOpaq: rgba(47, 76, 102, 0.37),
+);
+
+$generic-colors: (
+	color_rating: #ffc225,
+	color_red: #f63150cc,
+	color_redHover: #ee1414cc,
+	color_green: #4ebf62,
+	color_greenHover: #23b828,
+);
+
+$brands: (
+	color_spotify: #1db954,
+	color_facebook: #3b5998,
+	color_google: #eaeaea,
+);
+
+$status-colors: (
+	color_statusRed: #f63150cc,
+	color_statusYellow: #ecd53ae0,
+	color_statusOrange: #efaa15e0,
+	color_statusGreen: #4ebf62,
+	color_statusComplete: #15c040,
+);
+
+$component-colors: (
+	color_navBackground: #{map-get($shades, color_primaryBlack)},
+	color_headerBackground: #{map-get($theme-colors, color_themeSecondary)},
+);
+
+$text-colors: (
+	color_darkText: #{map-get($shades, color_primaryBlack)},
+	color_lightText: white,
+	color_metaText: #a6a2a2,
+);
+
+@each $colorName, $color in $shades {
+	:export {
+		#{$colorName}: #{map-get($shades, #{$colorName})};
+	}
+}
+
+@each $colorName, $color in $brands {
+	:export {
+		#{$colorName}: #{map-get($brands, #{$colorName})};
+	}
+}
+
+@each $colorName, $color in $theme-colors {
+	:export {
+		#{$colorName}: #{map-get($theme-colors, #{$colorName})};
+	}
+}
+
+@each $colorName, $color in $generic-colors {
+	:export {
+		#{$colorName}: #{map-get($generic-colors, #{$colorName})};
+	}
+}
+
+@each $colorName, $color in $status-colors {
+	:export {
+		#{$colorName}: #{map-get($status-colors, #{$colorName})};
+	}
+}
+
+@each $colorName, $color in $component-colors {
+	:export {
+		#{$colorName}: #{map-get($component-colors, #{$colorName})};
+	}
+}
+
+@each $colorName, $color in $text-colors {
+	:export {
+		#{$colorName}: #{map-get($text-colors, #{$colorName})};
+	}
+}

@@ -1,0 +1,9 @@
+$sizes: (
+	height_audioPlayer: 60px,
+);
+
+@each $sizeType, $size in $sizes {
+	:export {
+		#{$sizeType}: #{map-get($sizes, #{$sizeType})};
+	}
+}

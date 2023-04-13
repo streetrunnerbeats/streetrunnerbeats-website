@@ -1,0 +1,12 @@
+@import 'sass';
+
+.Outer {
+	// padding: map-get($sizes, size_nav_height) + 30px 0 20px 0;
+	margin: 0;
+	position: relative;
+
+	.Inner {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

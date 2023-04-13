@@ -1,0 +1,108 @@
+//•••••••••••••••••••
+// --> ROW FLEX
+//•••••••••••••••••••
+
+// Row Start
+@mixin flex-start {
+	display: flex !important;
+	align-items: flex-start;
+}
+
+@mixin flex-start-start {
+	@include flex-start();
+	justify-content: flex-start;
+}
+
+@mixin flex-start-center {
+	@include flex-start();
+	justify-content: center;
+}
+
+@mixin flex-start-end {
+	@include flex-start();
+	justify-content: flex-end;
+}
+
+// Row End
+@mixin flex-end {
+	display: flex !important;
+	align-items: flex-end;
+}
+
+// Row Center
+@mixin flex-center {
+	display: flex !important;
+	align-items: center;
+}
+
+@mixin flex-center-start {
+	@include flex-center();
+	justify-content: flex-start;
+}
+
+@mixin flex-center-center {
+	@include flex-center();
+	justify-content: center;
+}
+
+@mixin flex-center-end {
+	@include flex-center();
+	justify-content: flex-end;
+}
+
+// --> Would like to phase out 'flex-center-row' for 'flex-center-center'
+@mixin flex-center-row {
+	@include flex-center();
+	justify-content: center;
+}
+
+//•••••••••••••••••••
+// --> COLUMN FLEX
+//•••••••••••••••••••
+@mixin flex-col {
+	display: flex !important;
+	flex-direction: column !important;
+}
+// --> Column Align
+@mixin flex-col-start {
+	@include flex-col();
+	justify-content: flex-start !important;
+}
+
+@mixin flex-col-start-start {
+	@include flex-col-start();
+	align-items: flex-start;
+}
+
+@mixin flex-col-start-center {
+	@include flex-col-start();
+	align-items: center;
+}
+
+@mixin flex-col-end {
+	@include flex-col();
+	justify-content: flex-end !important;
+}
+
+@mixin flex-col-center {
+	@include flex-col();
+	justify-content: center !important;
+}
+
+@mixin flex-col-center-end {
+	@include flex-col-center();
+	align-items: flex-end !important;
+}
+
+@mixin flex-col-center-center {
+	@include flex-col-center();
+	align-items: center !important;
+}
+
+// would like to phase out for 'flex-col-center'
+@mixin flex-center-col {
+	@include flex-col-center;
+	justify-content: center;
+}
+
+// Content Centered Fully

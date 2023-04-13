@@ -1,0 +1,39 @@
+@import 'sass';
+
+@keyframes roll {
+	from {
+		margin-left: 0px;
+	}
+	to {
+		margin-left: var(--total-photo-width);
+	}
+}
+
+.InfiniteReelOuter {
+	@include flex-center-start;
+	@include no-select;
+	width: 100%;
+	height: calc(#{var(--photo-size)} + 20px);
+	background-color: map-get($theme-colors, color_themePrimaryOpaq);
+	overflow: hidden;
+
+	.InfiniteReelInner {
+		@include flex-center-start;
+		flex-wrap: nowrap;
+		width: var(--double-photo-width);
+
+		img {
+			@include no-select;
+			width: var(--photo-size);
+			height: var(--photo-size);
+			border-radius: 10px;
+			margin: 0 var(--photo-x-margin);
+			transition: 0.3s;
+		}
+
+		&:first-child {
+			margin-left: 0px;
+			animation: roll var(--animation-duration) linear infinite;
+		}
+	}
+}

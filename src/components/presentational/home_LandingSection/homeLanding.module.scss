@@ -1,0 +1,66 @@
+@import 'sass';
+
+.LandingWrapper {
+	height: 90vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	background-repeat: no-repeat;
+
+	.Wrapper {
+		@include flex-col-start-start;
+
+		.SubText,
+		.Title {
+			color: white;
+			letter-spacing: 1px;
+		}
+
+		.Title {
+			font-size: 5.5vw;
+			margin: 0;
+		}
+
+		.SubText {
+			max-width: 600px;
+			font-size: 1.7rem;
+			line-height: 2rem;
+			font-weight: 200;
+			margin-bottom: 20px;
+
+			span {
+				font-size: 1rem;
+				font-weight: 700;
+				letter-spacing: 0;
+				color: map-get($theme-colors, color_themePrimary) !important;
+				transition: 0.25s;
+
+				&:hover {
+					cursor: pointer;
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: '768px') {
+		.Wrapper {
+			.Title {
+				font-size: 7.6vw;
+			}
+			.SubText {
+				font-size: 5vw;
+				line-height: 5.4vw;
+			}
+		}
+	}
+
+	@media only screen and (min-width: '1400px') {
+		.Wrapper {
+			.Title {
+				font-size: 5.7rem;
+			}
+		}
+	}
+}

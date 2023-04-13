@@ -1,0 +1,108 @@
+@import 'sass';
+
+.Wrapper {
+	@include flex-center-start;
+	padding: 7px 12px;
+	width: 100%;
+	border-bottom: 1px solid map-get($theme-colors, color_themePrimary);
+
+	$default_photoWidth: 35px;
+	$default_titleWidth: 330px;
+	$default_fileInfoWidth: 70px;
+	$default_playWrapperWidth: 30px;
+	$default_menuWrapperWidth: 25px;
+	$default_infoWrapperWidth: calc(100% - #{$default_photoWidth} - #{$default_playWrapperWidth});
+
+	$admin_infoWrapperWidth: calc(
+		100% - #{$default_photoWidth} - #{$default_playWrapperWidth} - #{$default_menuWrapperWidth}
+	);
+
+	p {
+		margin: 0;
+	}
+
+	&[data-is-last-item='1'] {
+		border-bottom: none !important;
+	}
+
+	.Photo {
+		width: $default_photoWidth;
+		border-radius: 3px;
+	}
+
+	.InfoWrapper {
+		width: $default_infoWrapperWidth;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.TitleInfo {
+			width: $default_titleWidth;
+			padding: 0 10px;
+
+			.Title {
+				font-size: 0.9rem;
+				line-height: 1rem;
+				margin-bottom: 0.25rem;
+			}
+		}
+
+		.TitleInfo .SubTitle,
+		.FileInfo .Size {
+			font-size: 0.75rem;
+			line-height: 0.75rem;
+			color: map-get($theme-colors, color_themeSecondary) !important;
+			margin: 0;
+		}
+
+		.FileInfo {
+			width: $default_fileInfoWidth;
+		}
+
+		&[data-menu-showing='1'] {
+			width: $admin_infoWrapperWidth;
+		}
+	}
+
+	.InfoWrapper div,
+	.PlayWrapper svg,
+	.MenuWrapper svg {
+		color: white;
+	}
+
+	.MenuWrapper {
+		@include flex-center-center;
+		font-size: 18px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.PlayWrapper {
+		@include flex-center-center;
+		width: $default_playWrapperWidth;
+		margin-left: auto;
+		height: 100%;
+		svg {
+			font-size: 30px;
+			transition: 0.3s;
+
+			&:hover {
+				cursor: pointer;
+				opacity: 0.65;
+			}
+		}
+	}
+
+	.MenuWrapper {
+		width: $default_menuWrapperWidth;
+	}
+
+	&:hover {
+		background-color: map-get($theme-colors, color_themePrimaryOpaq) !important;
+	}
+
+	@media only screen and (max-width: 576px) {
+	}
+}

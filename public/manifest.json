@@ -1,0 +1,25 @@
+{
+  "short_name": "STREETRUNNER Beats",
+  "name": "STREETRUNNER Beats",
+  "icons": [
+    {
+      "src": "logo_70.png",
+      "type": "image/png",
+      "sizes": "70x70"
+    },
+    {
+      "src": "logo_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

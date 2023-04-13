@@ -1,0 +1,273 @@
+@import '../variables/';
+
+@mixin ellipsis-overflow {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+//•••••••••••••••••••••••
+//> PARAGRAPH FONT SIZES
+//•••••••••••••••••••••••
+@mixin p-default {
+	font-weight: 300 !important;
+
+	@media #{map-get($media, mobile_sm)} {
+		font-size: 5.8vw !important;
+		line-height: 6.75vw !important;
+	}
+
+	@media #{map-get($media, mobile_lg)} {
+		font-size: 1.3rem !important;
+		line-height: 1.7rem !important;
+	}
+
+	@media #{map-get($media, tablet)} {
+		font-size: 1.5rem !important;
+		line-height: 2rem !important;
+	}
+
+	@media #{map-get($media, cpu)} {
+		font-size: 1.5rem !important;
+		line-height: 2rem !important;
+	}
+	// Extra large
+	@media #{map-get($media, widescreen)} {
+		font-size: 1.9rem !important;
+		line-height: 2.7rem !important;
+	}
+}
+
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• NEEDS TO BE SET UP
+@mixin p-small {
+	font-weight: 300 !important;
+
+	@media #{map-get($media, mobile_sm)} {
+		font-size: 3.4vw !important;
+		line-height: 3.8vw !important;
+	}
+
+	@media #{map-get($media, mobile_lg)} {
+		font-size: 2.2vw !important;
+		line-height: 2.7vw !important;
+	}
+
+	@media #{map-get($media, tablet)} {
+		font-size: 1.4vw !important;
+		line-height: 1.7vw !important;
+	}
+
+	@media #{map-get($media, cpu)} {
+		font-size: 0.9rem !important;
+		line-height: 1rem !important;
+	}
+
+	@media #{map-get($media, widescreen)} {
+		font-size: 1.1rem !important;
+		line-height: 1.5rem !important;
+	}
+}
+
+@mixin p-summary {
+	font-weight: 300 !important;
+
+	@media #{map-get($media, mobile_sm)} {
+		font-size: 6.3vw !important;
+		line-height: 7.8vw !important;
+	}
+
+	@media #{map-get($media, mobile_lg)} {
+		font-size: 4vw !important;
+		line-height: 4.2vw !important;
+	}
+
+	@media #{map-get($media, tablet)} {
+		font-size: 2vw !important;
+		line-height: 2.3vw !important;
+	}
+
+	@media #{map-get($media, cpu)} {
+		font-size: 1.2rem !important;
+		line-height: 1.4rem !important;
+	}
+
+	@media #{map-get($media, widescreen)} {
+		font-size: 1.4rem !important;
+		line-height: 1.8rem !important;
+	}
+}
+
+// ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• NEEDS TO BE SET UP
+@mixin p-meta {
+	font-weight: 300 !important;
+
+	@media #{map-get($media, mobile_sm)} {
+		font-size: 6.3vw !important;
+		line-height: 7.8vw !important;
+	}
+
+	@media #{map-get($media, mobile_lg)} {
+		font-size: 4vw !important;
+		line-height: 4.2vw !important;
+	}
+
+	@media #{map-get($media, tablet)} {
+		font-size: 2vw !important;
+		line-height: 2.3vw !important;
+	}
+
+	@media #{map-get($media, cpu)} {
+		font-size: 1.2rem !important;
+		line-height: 1.4rem !important;
+	}
+
+	@media #{map-get($media, widescreen)} {
+		font-size: 1.4rem !important;
+		line-height: 1.8rem !important;
+	}
+}
+
+//••••••••••••••••••••
+//> PARAGRAPH TITLES
+//••••••••••••••••••••
+@mixin title-bold {
+	font-weight: 500 !important;
+	letter-spacing: 1px;
+
+	@media #{map-get($media, mobile)} {
+		font-size: 3rem !important;
+		line-height: 2.7rem !important;
+	}
+
+	@media #{map-get($media, tablet)} {
+		font-size: 2.9vw !important;
+		line-height: 3.2vw !important;
+	}
+
+	@media #{map-get($media, cpu)} {
+		font-size: 2.8vw !important;
+		line-height: 2.9vw !important;
+	}
+
+	@media #{map-get($media, widescreen)} {
+		font-size: 2.2rem !important;
+		line-height: 2.4rem !important;
+	}
+}
+
+@mixin sub-default {
+	font-size: 2rem !important;
+	font-weight: 300 !important;
+	letter-spacing: 1px;
+	margin-bottom: 20px !important;
+
+	@media #{map-get($media, mobile_sm)} {
+		font-size: 1.75rem !important;
+		line-height: 2rem !important;
+		text-align: left !important;
+	}
+
+	@media #{map-get($media, mobile_lg)} {
+		font-size: 2rem !important;
+		line-height: 2.4rem !important;
+		font-weight: 500 !important;
+		letter-spacing: 2px;
+	}
+
+	@media #{map-get($media, tablet)} {
+		font-size: 2.9vw !important;
+		line-height: 3.2vw !important;
+	}
+
+	@media #{map-get($media, cpu)} {
+		font-size: 2vw !important;
+		line-height: 2.4vw !important;
+	}
+
+	@media #{map-get($media, widescreen)} {
+		font-size: 2rem !important;
+		line-height: 2.3rem !important;
+	}
+}
+
+//•••••••••••••••••••••••••
+//> SECTION & PAGE TITLES
+//•••••••••••••••••••••••••
+@mixin body-hdr-default {
+	letter-spacing: 1px;
+
+	@media #{map-get($media, mobile_sm)} {
+		font-size: 2rem !important;
+		line-height: 2.3rem !important;
+		text-align: left !important;
+	}
+
+	@media #{map-get($media, mobile_lg)} {
+		font-size: 2.8rem !important;
+		line-height: 3rem !important;
+	}
+
+	@media #{map-get($media, tablet)} {
+		font-size: 4.7vw !important;
+		line-height: 4.8vw !important;
+	}
+
+	@media #{map-get($media, cpu)} {
+		font-size: 3.4vw !important;
+		line-height: 3.5vw !important;
+	}
+
+	@media #{map-get($media, widescreen)} {
+		font-size: 3.2rem !important;
+		line-height: 3.5rem !important;
+	}
+}
+
+@mixin banner-default {
+	font-weight: 400;
+	letter-spacing: 2px;
+
+	@media #{map-get($media, mobile_sm)} {
+		padding: 20px;
+		font-size: 3rem !important;
+		line-height: 3.6rem !important;
+	}
+
+	@media #{map-get($media, mobile_lg)} {
+		padding: 20px;
+		font-size: 4.7rem !important;
+		line-height: 4.8rem !important;
+	}
+
+	@media #{map-get($media, tablet)} {
+		font-size: 5.3vw !important;
+		line-height: 5.6vw !important;
+	}
+
+	@media #{map-get($media, cpu)} {
+		font-size: 4.8vw !important;
+		line-height: 5vw !important;
+	}
+
+	@media #{map-get($media, widescreen)} {
+		font-size: 4.7rem !important;
+		line-height: 4.8rem !important;
+		letter-spacing: 3px;
+	}
+}
+
+//••••••••••••••••••••
+// TEXT UTILITY
+//••••••••••••••••••••
+
+@mixin reset-text-margins {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		margin: 0 !important;
+	}
+}

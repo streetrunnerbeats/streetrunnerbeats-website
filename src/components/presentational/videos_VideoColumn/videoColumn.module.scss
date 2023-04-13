@@ -1,0 +1,33 @@
+@import 'sass';
+
+.VideoCardWrapper {
+	$border-rad: 8px;
+	padding: 10px;
+	transition: 0.2s;
+
+	.ThumbWrapper {
+		@include flex-center-center;
+		border-top-left-radius: $border-rad;
+		border-top-right-radius: $border-rad;
+
+		background-size: 100%;
+		background-position: center;
+
+		width: 100%;
+		height: 150px;
+	}
+
+	.VideoDetails {
+		background-color: map-get($theme-colors, color_themePrimaryOpaq);
+		border-bottom-left-radius: $border-rad;
+		border-bottom-right-radius: $border-rad;
+
+		padding: 7px 15px;
+	}
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.03) rotate(1deg);
+		opacity: 0.7;
+	}
+}

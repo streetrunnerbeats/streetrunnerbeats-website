@@ -1,0 +1,74 @@
+@import 'sass';
+
+.FooterWrapper {
+	padding: 35px 0 !important;
+
+	.FooterInner {
+		@include flex-center-center;
+		padding: 20px 0;
+
+		.OverlayColor {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: map-get($theme-colors, color_themePrimaryOpaq);
+		}
+
+		.FooterLeft {
+			@include flex-center-start;
+			.Logo {
+				width: 60px;
+				height: 60px;
+				margin-right: 20px;
+			}
+		}
+
+		.Footnote {
+			color: map-get($theme-colors, color_themeSecondary) !important;
+		}
+
+		.Links {
+			padding: 6px 0;
+			a {
+				color: white !important;
+				margin-right: 8px;
+				transition: 0.3s;
+
+				&:hover {
+					opacity: 0.65;
+				}
+			}
+		}
+
+		.Footnote,
+		.AdminLogin {
+			@include no-select;
+			font-size: 0.5rem;
+		}
+
+		.AdminLogin {
+			color: map-get($theme-colors, color_themePrimary) !important;
+			opacity: 0;
+			transition: 0.2s;
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		.AdminLogin:hover {
+			cursor: pointer;
+		}
+
+		&[data-color='solid'] {
+			background: map-get($shades, color_primaryBlack) !important;
+		}
+	}
+
+	@media only screen and (max-width: 576px) {
+		.FooterLeft {
+			margin-bottom: 15px;
+		}
+	}
+}

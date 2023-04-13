@@ -1,0 +1,75 @@
+@import 'sass';
+
+.FormOuter {
+	position: relative;
+	padding: 0 20px 0 0;
+}
+
+.AlbumSelectOption {
+	@include flex-center-start;
+
+	img {
+		width: 22px;
+		border-radius: 3px;
+	}
+
+	p {
+		margin: 0;
+		padding: 0 10px;
+	}
+}
+
+.CloseForm {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	svg {
+		color: map-get($theme-colors, color_themeSecondary);
+		transition: 0.3s;
+	}
+
+	&:hover {
+		cursor: pointer;
+		svg {
+			color: white;
+			transform: scale(1.05);
+		}
+	}
+}
+
+.FormSection {
+	padding: 20px 0;
+	border-bottom: solid 1px map-get($theme-colors, color_themePrimaryOpaq);
+
+	&:first-of-type {
+		padding-top: 0 !important;
+	}
+
+	&:last-of-type {
+		border-bottom: none !important;
+	}
+}
+
+.LoadingOverlay {
+	@include flex-start-center;
+	z-index: 100;
+	padding: 100px 0;
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+
+	.LoadingOverlayInner {
+		padding: 35px 40px;
+		border-radius: 20px;
+		background-color: map-get($theme-colors, color_themePrimary);
+		span {
+			margin-bottom: 15px;
+		}
+		i {
+			background-color: map-get($theme-colors, color_themeSecondary);
+		}
+	}
+}

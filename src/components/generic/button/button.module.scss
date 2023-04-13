@@ -1,0 +1,40 @@
+@import 'sass';
+
+.Button {
+	border-radius: map-get($borders, borders_large_radius);
+	letter-spacing: 1px;
+	height: 40px;
+
+	//•••••••••••••••••••
+	// ==> Layout Props
+	//•••••••••••••••••••
+	&[data-fluid='1'] {
+		width: 100% !important;
+	}
+
+	&[data-bottom-space='none'] {
+		margin-bottom: 0;
+	}
+	&[data-bottom-space='sm'] {
+		margin-bottom: 6px;
+	}
+	&[data-bottom-space='md'] {
+		margin-bottom: 12px;
+	}
+	&[data-bottom-space='lg'] {
+		margin-bottom: 18px;
+	}
+
+	//•••••••••••••••••••••
+	// ==> Color Styling
+	//•••••••••••••••••••••
+	&[data-type='primary'] {
+		background-color: map-get($theme-colors, color_themePrimary);
+		border-color: map-get($theme-colors, color_themePrimary);
+	}
+
+	&[data-type='secondary'] {
+		background-color: transparent;
+		border: 1px solid map-get($theme-colors, color_themeSecondary);
+	}
+}

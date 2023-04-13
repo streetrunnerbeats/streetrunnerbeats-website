@@ -1,0 +1,24 @@
+@import 'sass';
+
+.Input {
+	&,
+	input {
+		background-color: transparent !important;
+	}
+
+	input {
+		caret-color: white !important;
+		color: white !important;
+	}
+
+	svg,
+	:carot {
+		color: map-get($theme-colors, color_themeSecondary) !important;
+	}
+}
+
+.CardTabs {
+	.ant-tabs-tab-active {
+		background-color: red !important;
+	}
+}

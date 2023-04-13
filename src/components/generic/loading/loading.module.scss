@@ -1,0 +1,12 @@
+@import 'sass';
+
+.Wrapper {
+	@include flex-center-center;
+	height: 250px;
+	width: 100%;
+
+	.LoadingText {
+		color: map-get($theme-colors, color_themeSecondary) !important;
+		padding: 10px !important;
+	}
+}

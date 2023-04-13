@@ -1,0 +1,12 @@
+$borders: (
+	borders_small_radius: 3px,
+	borders_med_radius: 14px,
+	borders_large_radius: 20px,
+	borders_avatars: 50%,
+);
+
+@each $border, $color in $borders {
+	:export {
+		#{$border}: #{map-get($borders, #{$border})};
+	}
+}

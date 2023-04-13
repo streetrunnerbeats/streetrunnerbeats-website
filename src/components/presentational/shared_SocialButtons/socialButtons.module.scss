@@ -1,0 +1,16 @@
+@import 'sass';
+
+.Wrapper {
+	@include flex-center-center;
+
+	svg {
+		color: map-get($theme-colors, color_themeSecondary);
+		transition: 0.3s;
+
+		&:hover {
+			color: white;
+			transform: scale(1.04);
+			cursor: pointer;
+		}
+	}
+}

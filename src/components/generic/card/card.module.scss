@@ -1,0 +1,26 @@
+@import 'sass';
+
+.SegmentWrapper {
+	margin-bottom: 45px;
+
+	.TitleWrapper {
+		@include flex-center-center;
+		height: 130px;
+		position: relative;
+
+		h1 {
+			text-align: center;
+			z-index: 80;
+			letter-spacing: 1px;
+			font-weight: 600;
+			color: white;
+		}
+
+		img {
+			position: absolute;
+			width: 100px;
+			top: 0;
+			opacity: 0.15;
+		}
+	}
+}

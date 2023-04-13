@@ -1,0 +1,47 @@
+@import 'sass';
+
+.Wrapper {
+	$size: 100%;
+	width: $size;
+	height: 150px;
+	border-radius: 10px;
+	transition: 0.3s;
+	position: relative;
+	padding: 0 10px;
+	@include flex-col-center-center;
+
+	.NoPreview {
+		@include flex-col-center-center;
+		border-radius: 10px;
+		background-color: map-get($theme-colors, color_themePrimaryOpaq);
+		height: 150px;
+		width: 150px;
+		max-width: 100%;
+
+		p {
+			margin: 0;
+			font-size: 10px;
+		}
+	}
+
+	img {
+		height: 100%;
+		border-radius: 10px;
+
+		&:hover {
+			opacity: 0.85;
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.8;
+	}
+
+	&:target,
+	&:focus {
+		cursor: pointer;
+		border: solid 2px white;
+		opacity: 1;
+	}
+}

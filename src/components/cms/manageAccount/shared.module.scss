@@ -1,0 +1,76 @@
+@import 'sass';
+
+.ThumbnailCollectionWrapper {
+	@include flex-center-start;
+	flex-wrap: wrap;
+	padding: 15px 0;
+	margin-bottom: 10px;
+	position: relative;
+
+	.ThumbnailWrapper {
+		position: relative;
+		display: flex;
+
+		.DeleteIcon {
+			position: absolute;
+			opacity: 0;
+			top: -10px;
+			transition: 0.2s;
+			right: -10px;
+			// background-color: map-get($theme-colors, color_themePrimaryOpaq);
+			border-radius: 100%;
+			z-index: 100;
+
+			svg {
+				font-size: 20px;
+				color: white;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		img {
+			width: 80px;
+			margin: 4px;
+			border-radius: 4px;
+			transition: 0.2s;
+			animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+		}
+		&:hover {
+			.DeleteIcon {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.ToggleText {
+	font-size: 11px;
+	padding-left: 15px;
+	color: map-get($theme-colors, color_themePrimary) !important;
+	text-decoration: underline;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.PlaylistDetails {
+	padding: 10px;
+}
+
+.DeletePrompt {
+	@include flex-col-center-center;
+
+	.DeletePreview {
+		width: 200px;
+		border-radius: 8px;
+	}
+
+	.ButtonWrapper {
+		@include flex-center-center;
+		padding: 10px;
+	}
+}

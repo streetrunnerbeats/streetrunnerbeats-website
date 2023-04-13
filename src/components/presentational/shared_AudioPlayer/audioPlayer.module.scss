@@ -1,0 +1,138 @@
+@import 'sass';
+
+.MainPlayerContainer {
+	$pageLeftRightPad: 15px;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+
+	.ToggleVisibility {
+		right: $pageLeftRightPad;
+	}
+
+	.ControlsWrapper {
+		@include flex-center-start;
+		left: $pageLeftRightPad;
+	}
+
+	.PlayerButton {
+		margin-right: 10px;
+	}
+
+	.ToggleVisibility,
+	.PlayerButton,
+	.ControlsWrapper {
+		transition: 0.14s;
+	}
+
+	.ToggleVisibility,
+	.PlayerButton {
+		@include no-select;
+		background-color: map-get($theme-colors, color_themePrimary);
+		border-radius: 10px;
+		padding: 5px;
+
+		svg {
+			color: white;
+		}
+
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.1);
+		}
+	}
+
+	.ControlsWrapper,
+	.ToggleVisibility {
+		z-index: 101;
+		position: fixed;
+
+		&[data-player-open='0'] {
+			bottom: 15px;
+		}
+
+		&[data-player-open='1'] {
+			bottom: calc(#{map-get($sizes, height_audioPlayer)} + 10px);
+		}
+	}
+
+	.PlayerOuter {
+		z-index: 100;
+		position: fixed;
+		width: inherit;
+		left: 0;
+		transition: 0.15s;
+		transition-timing-function: ease-in-out;
+		background-color: map-get($shades, color_primaryBlack);
+		height: map-get($sizes, height_audioPlayer);
+
+		&[data-player-open='0'] {
+			bottom: -(map-get($sizes, height_audioPlayer));
+		}
+
+		&[data-player-open='1'] {
+			bottom: 0;
+		}
+
+		.PlayerInner {
+			z-index: 101;
+			position: relative;
+			height: 100%;
+			width: 100%;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			padding: 0;
+			box-sizing: border-box;
+
+			.Left {
+				@include flex-center-start;
+				width: map-get($sizes, height_audioPlayer);
+
+				.Photo {
+					width: map-get($sizes, height_audioPlayer);
+					margin-right: 10px;
+				}
+			}
+
+			.Playback {
+				@include flex-center-start;
+				background-color: map-get($theme-colors, color_themeSecondary);
+				position: relative;
+				width: calc(100% - #{map-get($sizes, height_audioPlayer)});
+				height: 100%;
+				padding: 5px 20px;
+
+				.ProgressOverlay {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 102;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+
+				.ProgressInfo {
+					z-index: 101;
+
+					p,
+					span {
+						margin: 0;
+					}
+
+					p {
+						font-size: 1rem;
+					}
+
+					span {
+						font-size: 0.8rem;
+					}
+				}
+			}
+		}
+	}
+}

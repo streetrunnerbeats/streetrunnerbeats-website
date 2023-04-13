@@ -1,0 +1,17 @@
+@import 'sass';
+
+.FormOuter {
+	padding: 0 20px 0 0;
+}
+
+.AlbumSelectOption {
+	@include flex-center-start;
+	img {
+		width: 22px;
+		border-radius: 3px;
+	}
+	p {
+		margin: 0;
+		padding: 0 10px;
+	}
+}

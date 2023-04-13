@@ -1,0 +1,185 @@
+@import './index';
+@import 'sass';
+
+// GLOBALS
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+	color: white !important;
+}
+
+.ant-notification-notice-close {
+	svg {
+		color: map-get($theme-colors, color_themePrimary) !important;
+	}
+}
+
+.ant-spin-text {
+	color: white !important;
+}
+
+//-----------------------------------
+// ==> Modal
+//-----------------------------------
+.ant-modal-header,
+.ant-modal-content {
+	background-color: map-get($shades, color_primaryBlack) !important;
+}
+.ant-modal-header {
+	div {
+		color: white !important;
+	}
+}
+
+.ant-modal-content {
+	border: 1px solid map-get($theme-colors, color_themeSecondary) !important;
+}
+
+//-----------------------------------
+// ==> Dropdown Menu
+//-----------------------------------
+.ant-dropdown-menu {
+	background-color: map-get($theme-colors, color_themePrimary) !important;
+	border-radius: 5px !important;
+	min-width: 80px;
+	padding: 0 !important;
+
+	li {
+		padding: 0 !important;
+		p {
+			padding: 7px 14px !important;
+			margin: 0;
+		}
+
+		&:hover {
+			background-color: map-get($theme-colors, color_themeSecondary) !important;
+		}
+	}
+}
+
+.ant-dropdown-trigger {
+	@include flex-center-center;
+}
+
+//-----------------------------------
+// ==> Menu Tabs
+//-----------------------------------
+.ant-tabs-tab {
+	color: map-get($theme-colors, color_themeSecondary);
+}
+
+.ant-tabs-card {
+	.ant-tabs-tab-active {
+		background-color: map-get($theme-colors, color_themePrimaryOpaq) !important;
+		border-bottom-color: rgba(255, 255, 255, 0) !important;
+		// border-bottom-color: map-get($theme-colors, color_themeSecondary) !important;
+		.ant-tabs-tab-btn {
+			color: map-get($theme-colors, color_themeSecondary) !important;
+		}
+	}
+}
+
+//-----------------------------------
+// ==> Collapse Component
+//-----------------------------------
+.ant-collapse,
+.ant-collapse-item {
+	border-color: map-get($theme-colors, color_themePrimary) !important;
+}
+
+.ant-collapse-header {
+	.ant-collapse-header-text,
+	.ant-collapse-expand-icon {
+		color: white;
+	}
+
+	&[aria-expanded='true'] {
+		background-color: map-get($theme-colors, color_themePrimaryOpaq) !important;
+	}
+}
+
+.ant-collapse-content {
+	border-color: map-get($theme-colors, color_themePrimary) !important;
+	background-color: map-get($theme-colors, color_themePrimaryOpaq) !important;
+}
+
+.ant-collapse-content-box {
+	padding: 0 !important;
+}
+
+//-----------------------------------
+// ==> Form Components
+//-----------------------------------
+
+.ant-input {
+	caret-color: white !important;
+	color: white !important;
+
+	border-color: map-get($theme-colors, color_themePrimary);
+
+	&:-webkit-autofill,
+	&:-webkit-autofill:focus {
+		-webkit-text-fill-color: white !important;
+	}
+
+	&::placeholder,
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+		color: map-get($theme-colors, color_themeSecondary) !important;
+	}
+
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+		transition: background-color 5000s ease-in-out 0s !important;
+	}
+
+	&[type='file'] {
+		border: none;
+		&:hover {
+			cursor: pointer;
+			&::file-selector-button {
+				color: white;
+			}
+		}
+		&::file-selector-button {
+			color: map-get($theme-colors, color_themePrimary);
+			background-color: transparent;
+			transition: 0.13s;
+			padding: 0 10px;
+			border: 1px solid map-get($theme-colors, color_themePrimary);
+			border-radius: 5px;
+			margin-right: 20px;
+
+			&:hover {
+				cursor: pointer;
+				color: white;
+			}
+		}
+	}
+}
+
+.ant-select,
+.ant-select-selector,
+.ant-select-selection-search-input {
+	background-color: map-get($shades, color_primaryBlack) !important;
+
+	svg {
+		color: map-get($theme-colors, color_themePrimary) !important;
+	}
+}
+.ant-select-selection-placeholder {
+	color: map-get($theme-colors, color_themeSecondary) !important;
+}
+
+.ant-select-selector {
+	border-color: map-get($theme-colors, color_themePrimary) !important;
+}

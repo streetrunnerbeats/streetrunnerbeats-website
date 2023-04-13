@@ -1,0 +1,81 @@
+@import 'sass';
+
+.NavOuter {
+	@include flex-center-start;
+	align-items: flex-start;
+	width: 100%;
+	position: fixed;
+	padding: 10px 0px;
+	z-index: 100;
+	justify-content: space-between;
+
+	.Logo {
+		transition: 0.3s;
+		width: 45px;
+		&:hover {
+			cursor: pointer;
+			opacity: 0.75;
+		}
+	}
+
+	.NavLeft {
+		padding: 0 20px;
+	}
+
+	.NavRight {
+		position: relative;
+		padding: 0 20px;
+
+		.LinkWrapper {
+			@include flex-center-center;
+			border-radius: 100%;
+			$size: 35px;
+			width: $size;
+			height: $size;
+			transition: 0.3s;
+			margin-left: 5px;
+			background-color: map-get($theme-colors, color_themePrimary);
+			opacity: 0.7;
+
+			&:hover {
+				opacity: 1 !important;
+			}
+		}
+
+		.TriggerWrapper,
+		.Links {
+			transition: 0.3s;
+		}
+		.Links {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.TriggerWrapper {
+			z-index: 98;
+		}
+
+		.Links {
+			@include flex-center-center;
+			z-index: 99;
+			right: -50px;
+			opacity: 0;
+		}
+
+		&:hover {
+			.TriggerWrapper {
+				transform: translateX(-100px);
+				opacity: 0;
+			}
+			.Links {
+				right: 20px;
+				opacity: 1;
+				cursor: pointer;
+			}
+		}
+	}
+	svg {
+		color: white;
+	}
+}

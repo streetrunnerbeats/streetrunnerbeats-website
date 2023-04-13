@@ -1,0 +1,48 @@
+@mixin center-cover-bg {
+	background-size: cover !important;
+	background-position: center !important;
+}
+
+@mixin bottom-cover-bg {
+	background-size: cover !important;
+	background-position: bottom !important;
+}
+
+@mixin top-cover-bg {
+	background-size: cover !important;
+	background-position: top !important;
+}
+
+@mixin status-backgrounds {
+	p {
+		color: white !important;
+	}
+	&[data-status-color='declined'],
+	&[data-status-color='refunded'],
+	&[data-status-color='request cancelled'],
+	&[data-status-color='request declined'],
+	&[data-status-color='cancelled'] {
+		background-color: map-get($status-colors, color_statusRed);
+	}
+
+	&[data-status-color='pending funding'],
+	&[data-status-color='pending approval'],
+	&[data-status-color='pending contracts'],
+	&[data-status-color='refund requested'],
+	&[data-status-color='proposal requested'],
+	&[data-status-color='awaiting feedback'],
+	&[data-status-color='pending proposal'] {
+		background-color: map-get($status-colors, color_statusYellow);
+	}
+
+	&[data-status-color='in progress'],
+	&[data-status-color='funded'],
+	&[data-status-color='complete'],
+	&[data-status-color='refunded'] {
+		background-color: map-get($status-colors, color_statusGreen);
+	}
+
+	&[data-status-color='revisions requested'] {
+		background-color: map-get($status-colors, color_statusOrange);
+	}
+}
