@@ -121,6 +121,12 @@ const ManageReelPhotos = ({ messageApi }: { messageApi: any }) => {
 					</div>
 				))}
 			</div>
+			{currentReelPhotos.length < 10 && (
+				<p>
+					Note: You must have at least 10 photos for the reel to show on the site. Add{' '}
+					{10 - currentReelPhotos.length} more for it to appear on your web page
+				</p>
+			)}
 			<Button onClick={() => toggleIsAddingReelPhoto(true)}>Add Photo To Reel</Button>
 			<Spacer height='100px' divider />
 			<Modal

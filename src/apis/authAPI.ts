@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // ==> Project Imports
 import routes from 'routes';
-import { DEFAULT_HEADERS, TOKEN_LABEL } from 'config';
+import { DEFAULT_HEADERS, SERVER_URL, TOKEN_LABEL } from 'config';
 
 /**
  *
@@ -73,6 +73,7 @@ const authAPI = {
 			});
 	},
 	login({ data, successCallback, errorHandler }: LoginArgs) {
+		console.log({ trying: SERVER_URL });
 		return apiInstance({
 			data,
 			method: 'POST',
