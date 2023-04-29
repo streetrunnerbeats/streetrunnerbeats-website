@@ -29,11 +29,11 @@ const RIAACertification = () => {
 	}, [panels]);
 
 	return (
-		<Card title='RIAA CERTIFICATIONS'>
-			<Collapse accordion>
-				{panels &&
-					Object.keys(panels).length > 0 &&
-					Object.entries(panels)
+		panels &&
+		Object.keys(panels).length > 0 && (
+			<Card title='RIAA CERTIFICATIONS'>
+				<Collapse accordion>
+					{Object.entries(panels)
 						.sort((a, b) => (a > b ? -1 : 1))
 						.map((panel: any) => {
 							return (
@@ -54,8 +54,9 @@ const RIAACertification = () => {
 								</Panel>
 							);
 						})}
-			</Collapse>
-		</Card>
+				</Collapse>
+			</Card>
+		)
 	);
 };
 

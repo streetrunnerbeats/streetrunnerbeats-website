@@ -43,7 +43,7 @@ interface SongListItemProps {
  * @param {boolean} showFileInfo (optional) - default: false - If true, will show the file size and song length in list item
  * @param {boolean} lastItem (optional) - default: false - If true, will leave out bottom border to end list
  *
- * @returns A list item for the song document
+ * @returns {JSX.Element} A list item for the song document
  */
 const SongListItem = ({
 	lastItem = false,
