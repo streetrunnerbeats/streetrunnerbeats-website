@@ -1,8 +1,6 @@
 // ==> React
 import * as React from 'react';
 
-import { Dropdown } from 'antd';
-
 // ==> Project Imports
 import { SongListItem, Overlay, Loader, FilterOptions } from 'components';
 import { ContentCol, Footer, Spacer, ScrollToTop } from 'layout';
