@@ -11,6 +11,7 @@ export const ICON_POINT_DOWN = 'material-symbols:keyboard-arrow-down-rounded';
 export const ICON_SETTINGS = 'material-symbols:settings-rounded';
 export const ICON_LOGOUT = 'humbleicons:logout';
 export const ICON_CLOSE = 'ri:close-circle-line';
+export const ICON_SEARCH = 'ic:outline-search';
 
 // ==> Audio & Player
 export const ICON_MUSIC_NOTES = 'ph:music-notes-light';

@@ -7,7 +7,7 @@ interface CustomInputInterface {
 }
 
 const CustomInput = ({ ...rest }: CustomInputInterface) => {
-	return <Input {...rest} className={Style.Input} />;
+	return <Input className={Style.Input} {...rest} />;
 };
 
 export default CustomInput;

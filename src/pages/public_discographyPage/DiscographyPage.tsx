@@ -1,8 +1,10 @@
 // ==> React
 import * as React from 'react';
 
+import { Dropdown } from 'antd';
+
 // ==> Project Imports
-import { SongListItem, Overlay, Loader } from 'components';
+import { SongListItem, Overlay, Loader, FilterOptions } from 'components';
 import { ContentCol, Footer, Spacer, ScrollToTop } from 'layout';
 import { DiscographyHeader } from 'assets';
 import { Song } from 'types';
@@ -13,24 +15,23 @@ import Style from './discographyPage.module.scss';
 
 const DiscographyPage = () => {
 	const [isLoading, setIsLoading] = React.useState<boolean>(false);
-	const [initalLoaded, setInitialLoaded] = React.useState<boolean>(false);
-
-	const [songs, setSongs] = React.useState<Song[]>([] as Song[]);
+	const [results, setResults] = React.useState<Song[]>([] as Song[]);
+	const [filteredResults, setFilteredResults] = React.useState<Song[]>([] as Song[]);
+	const componentMounted = React.useRef(false);
 
 	async function fetchSongs() {
 		setIsLoading(true);
-		let { songs } = await audioAPI.fetchSongs();
-		if (songs) await setSongs(songs);
-
+		const { songs } = await audioAPI.fetchSongs();
+		setResults(songs);
 		return setIsLoading(false);
 	}
 
 	React.useEffect(() => {
-		if (!initalLoaded) {
+		if (!componentMounted.current) {
 			fetchSongs();
-			setInitialLoaded(true);
+			componentMounted.current = true;
 		}
-	}, [initalLoaded, songs]);
+	}, [componentMounted]);
 
 	const Stat = ({ count, label }: { count: number; label: string }) => {
 		return (
@@ -51,35 +52,43 @@ const DiscographyPage = () => {
 
 			<Spacer height='50vh' maxHeight='450px' minHeight='300px' />
 
-			<ContentCol padding=''>
+			<ContentCol padding='' customColumnClass={''}>
 				<h2 className={Style.HeaderText}>THREE-TIME GRAMMY AWARD WINNER</h2>
 			</ContentCol>
 
 			<div className={Style.StatBarOuter}>
-				<ContentCol padding='30px 0 '>
+				<ContentCol padding='30px 0 ' customColumnClass={''}>
 					<div className={Style.StatBarInner}>
-						<Stat count={songs.length} label={'TRACKS'} />
-						<Stat count={songs.filter((s: Song) => s.certified).length} label={'RIAA CERTS'} />
+						<Stat count={results.length} label={'TRACKS'} />
+						<Stat count={results.filter((s: Song) => s.certified).length} label={'RIAA CERTS'} />
 					</div>
 				</ContentCol>
 			</div>
 
-			<ContentCol>
+			<ContentCol padding={''} customColumnClass={''}>
+				<FilterOptions
+					songs={results}
+					updateResultsCallback={setFilteredResults}
+					placeholder='Search songs, artist, album'
+				/>
+			</ContentCol>
+
+			<ContentCol padding={''} customColumnClass={''}>
 				{isLoading ? (
 					<Loader includeText loadingText='Loading Discography' />
+				) : filteredResults.length === 0 && !isLoading ? (
+					<p style={{ width: '100%', textAlign: 'center', padding: '100px 10px' }}>No Results</p>
 				) : (
-					songs
-						.sort((a, b) => (a.album.title < b.album.title ? -1 : 1))
-						.map((song, i) => (
-							<SongListItem
-								key={song._id}
-								song={song}
-								size='small'
-								title={`${song.title}`}
-								subtitle={`By ${song.artist}`}
-								lastItem={i === songs.length - 1}
-							/>
-						))
+					filteredResults.map((song, i) => (
+						<SongListItem
+							key={song._id}
+							song={song}
+							size='small'
+							title={`${song.title}`}
+							subtitle={`By ${song.artist}`}
+							lastItem={i === filteredResults.length - 1}
+						/>
+					))
 				)}
 			</ContentCol>
 

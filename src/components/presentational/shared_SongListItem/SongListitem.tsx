@@ -37,13 +37,11 @@ interface SongListItemProps {
  * @param {Song} song - (required) - a song document from the database
  * @param {string} title (required) - Main text title for the song list item
  * @param {string} subtitle (required) - Secondary text for the song list item
- *
  * @param {'default' | 'small'} size (optional) - This should be removed, the default has been changed to be smaller there isn't much difference
  * @param {boolean} showMenu (optional) - default: false - If true, menu with admin options will show. Menu actions will not work if admin is not logged in.
  * @param {boolean} showFileInfo (optional) - default: false - If true, will show the file size and song length in list item
  * @param {boolean} lastItem (optional) - default: false - If true, will leave out bottom border to end list
- *
- * @returns {JSX.Element} A list item for the song document
+ * @returns {JSX.Element | null} A list item for the song document
  */
 const SongListItem = ({
 	lastItem = false,
@@ -53,7 +51,7 @@ const SongListItem = ({
 	song,
 	subtitle,
 	title,
-}: SongListItemProps) => {
+}: SongListItemProps): JSX.Element | null => {
 	const [length, setLength] = React.useState<string | null>(null);
 	const { handlePlaySong } = React.useContext(AudioPlayerContext);
 
@@ -74,36 +72,34 @@ const SongListItem = ({
 	 * TODO :: Protect from user closing modal
 	 */
 
-	return (
-		song && (
-			<div className={Style.Wrapper} data-size={size} data-is-last-item={lastItem ? 1 : 0}>
-				{showMenu && <SongItemMenu song={song} />}
+	return !song ? null : (
+		<div className={Style.Wrapper} data-size={size} data-is-last-item={lastItem ? 1 : 0}>
+			{showMenu && <SongItemMenu song={song} />}
 
-				<Image className={Style.Photo} src={selectSongPhoto(song)} alt='album art' />
+			<Image className={Style.Photo} src={selectSongPhoto(song)} alt='album art' />
 
-				<div className={Style.InfoWrapper} data-menu-showing={showMenu ? 1 : 0}>
-					<div className={Style.TitleInfo}>
-						<Paragraph ellipsis className={Style.Title}>
-							{title}
-						</Paragraph>
-						<Paragraph ellipsis className={Style.SubTitle}>
-							{subtitle}
-						</Paragraph>
+			<div className={Style.InfoWrapper} data-menu-showing={showMenu ? 1 : 0}>
+				<div className={Style.TitleInfo}>
+					<Paragraph ellipsis className={Style.Title}>
+						{title}
+					</Paragraph>
+					<Paragraph ellipsis className={Style.SubTitle}>
+						{subtitle}
+					</Paragraph>
+				</div>
+
+				{song.audio.size && length && showFileInfo && (
+					<div className={Style.FileInfo}>
+						<p className={Style.Duration}>{length}</p>
+						<p className={Style.Size}>{formatFileSize(song.audio.size)}</p>
 					</div>
-
-					{song.audio.size && length && showFileInfo && (
-						<div className={Style.FileInfo}>
-							<p className={Style.Duration}>{length}</p>
-							<p className={Style.Size}>{formatFileSize(song.audio.size)}</p>
-						</div>
-					)}
-				</div>
-
-				<div className={Style.PlayWrapper} onClick={() => handlePlaySong(song)}>
-					<IconifyIcon icon={ICON_PLAY_BUTTON} size='sm' />
-				</div>
+				)}
 			</div>
-		)
+
+			<div className={Style.PlayWrapper} onClick={() => handlePlaySong(song)}>
+				<IconifyIcon icon={ICON_PLAY_BUTTON} size='sm' />
+			</div>
+		</div>
 	);
 };
 

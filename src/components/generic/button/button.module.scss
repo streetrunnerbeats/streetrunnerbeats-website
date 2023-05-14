@@ -29,8 +29,8 @@
 	// ==> Color Styling
 	//•••••••••••••••••••••
 	&[data-type='primary'] {
-		background-color: map-get($theme-colors, color_themePrimary);
-		border-color: map-get($theme-colors, color_themePrimary);
+		background-color: map-get($theme-colors, color_themePrimary) !important;
+		border-color: map-get($theme-colors, color_themePrimary) !important;
 	}
 
 	&[data-type='secondary'] {

@@ -29,8 +29,9 @@ const RIAACertification = () => {
 	}, [panels]);
 
 	return (
-		<Card title='DISCOGRAPHY'>
-			{panels && Object.keys(panels).length > 0 && (
+		panels &&
+		Object.keys(panels).length > 0 && (
+			<Card title='DISCOGRAPHY'>
 				<Collapse accordion>
 					{Object.entries(panels)
 						.sort((a, b) => (a > b ? -1 : 1))
@@ -55,8 +56,8 @@ const RIAACertification = () => {
 							);
 						})}
 				</Collapse>
-			)}
-		</Card>
+			</Card>
+		)
 	);
 };
 

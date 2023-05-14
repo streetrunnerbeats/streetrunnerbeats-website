@@ -1,0 +1,18 @@
+@import 'sass';
+
+.Wrapper {
+	@include flex-center-center;
+	column-gap: 20px;
+	position: relative;
+	width: 100%;
+	padding: 2rem 1rem;
+
+	@media only screen and (max-width: 576px) {
+		flex-direction: column !important;
+
+		.Input {
+			width: 100% !important;
+			margin-bottom: 0.5rem;
+		}
+	}
+}

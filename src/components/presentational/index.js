@@ -12,3 +12,5 @@ export { default as SocialButtons } from './shared_SocialButtons/SocialButtons.t
 export { default as SongListItem } from './shared_SongListItem/SongListitem.tsx';
 export { default as InfiniteReel } from './shared_InfiniteReel/InfiniteReel.tsx';
 export { default as AudioPlayer } from './shared_AudioPlayer/AudioPlayer.tsx';
+
+export * from './discography_FilterOptions/FilterOptions';
