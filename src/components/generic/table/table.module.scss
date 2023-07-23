@@ -1,0 +1,45 @@
+.Label {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+
+	.LabelLeft {
+		display: flex;
+		align-items: center;
+		column-gap: 1em;
+
+		.LabelImg {
+			width: 40px;
+
+			img {
+				width: 100%;
+				border-radius: 8px;
+			}
+		}
+	}
+}
+
+.ItemList {
+	list-style: none;
+	margin: 0;
+	padding: 1em 0 1em 3em;
+
+	li {
+		margin: 0;
+		color: white;
+		padding: 0.35em;
+	}
+}
+
+.Desktop {
+	@media only screen and (max-width: 850px) {
+		display: none;
+	}
+}
+
+.Mobile {
+	@media only screen and (min-width: 851px) {
+		display: none;
+	}
+}

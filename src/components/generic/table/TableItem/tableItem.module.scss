@@ -1,0 +1,16 @@
+@import 'sass';
+
+.Wrapper {
+	display: flex;
+	align-items: center;
+	column-gap: 1em;
+
+	img {
+		width: 40px;
+		border-radius: 8px;
+	}
+
+	p {
+		margin: 0;
+	}
+}

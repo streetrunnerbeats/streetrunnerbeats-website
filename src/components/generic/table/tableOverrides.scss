@@ -1,0 +1,36 @@
+@import 'sass';
+
+.ant-table {
+	// padding: 0 20px !important;
+	background-color: map-get($theme-colors, color_themePrimaryOpaq) !important;
+	color: white !important;
+	border: 1px solid map-get($theme-colors, color_themePrimary) !important;
+	font-weight: 300;
+}
+
+:where(.css-dev-only-do-not-override-12b3jrp).ant-collapse > .ant-collapse-item > .ant-collapse-header {
+	align-items: center !important;
+}
+
+.ant-table-row .ant-table-cell {
+	border-top: solid 1px map-get($theme-colors, color_themePrimary) !important;
+	padding: 8px 16px !important;
+}
+
+.ant-table-row {
+	&:hover {
+		background-color: map-get($theme-colors, color_themePrimaryOpaq) !important;
+	}
+}
+
+:where(.css-dev-only-do-not-override-12b3jrp).ant-table-wrapper .ant-table-thead > tr > th {
+	color: white !important;
+	background-color: transparent !important;
+	// border-bottom-color: map-get($theme-colors, color_themePrimary) !important;
+	font-weight: 700;
+}
+
+:where(.css-dev-only-do-not-override-12b3jrp).ant-table-wrapper .ant-table-tbody > tr.ant-table-row:hover > td,
+:where(.css-dev-only-do-not-override-12b3jrp).ant-table-wrapper .ant-table-tbody > tr > td.ant-table-cell-row-hover {
+	background-color: map-get($theme-colors, color_themePrimaryOpaq) !important;
+}

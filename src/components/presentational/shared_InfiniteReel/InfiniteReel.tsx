@@ -4,7 +4,7 @@ import { adminAPI } from 'apis';
 import { Photo } from 'types';
 import Style from './infiniteReel.module.scss';
 
-const InfiniteReel = () => {
+const InfiniteReel = (): JSX.Element | boolean | null => {
 	let [photoSize, photoXMargin] = [100, 6];
 
 	const [reelPhotos, setReelPhotos] = React.useState<null | Photo[]>(null);

@@ -7,7 +7,7 @@ interface ButtonProps {
 	bottomSpace?: 'none' | 'sm' | 'md' | 'lg';
 	type?: 'primary' | 'secondary';
 	[x: string]: any;
-	children?: JSX.Element | JSX.Element[];
+	children?: JSX.Element | JSX.Element[] | string;
 }
 
 const Button = ({

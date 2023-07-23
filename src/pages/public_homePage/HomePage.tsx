@@ -3,14 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // Project
 import { Footer, ScrollToTop, ContentCol } from 'layout';
 import routes from 'routes';
-import {
-	InfiniteReel,
-	AwardsAndNominations,
-	Button,
-	DiscographyCard,
-	RIAACertifications,
-	HomeLanding,
-} from 'components';
+import { InfiniteReel, Button, DiscographyCard, HomeLanding, GrammyAwards, RIAACertificationsTable } from 'components';
 
 const HomePage = () => {
 	const navigate = useNavigate();
@@ -20,8 +13,8 @@ const HomePage = () => {
 			<HomeLanding />
 			<InfiniteReel />
 			<ContentCol>
-				<AwardsAndNominations />
-				<RIAACertifications />
+				<GrammyAwards />
+				<RIAACertificationsTable />
 				<DiscographyCard />
 
 				<div style={{ width: '100%', display: 'flex' }}>

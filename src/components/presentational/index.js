@@ -3,6 +3,8 @@ export { default as AwardsAndNominations } from './home_AwardsAndNominations/Awa
 export { default as DiscographyCard } from './home_Discography/DiscographyCard.tsx';
 export { default as HomeLanding } from './home_LandingSection/HomeLanding.tsx';
 export { default as RIAACertifications } from './home_RIAACertifications/RIAACertifications.tsx';
+export { default as GrammyAwards } from './home_GrammyAwards/GrammyAwardsCard.tsx';
+export { default as RIAACertificationsTable } from './home_RIAACertificationsTable/RIAACertificationTable.tsx';
 
 // Video Page Components
 export { default as YouTubeVideoColumn } from './videos_VideoColumn/VideoColumn.tsx';
