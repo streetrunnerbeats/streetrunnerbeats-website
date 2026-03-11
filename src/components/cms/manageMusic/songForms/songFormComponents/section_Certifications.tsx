@@ -15,7 +15,7 @@ const SelectCertificationSection = ({ onChange, values }: SongFormInterface) => 
 			</Form.Item>
 
 			<Form.Item name='certifiedFor' style={{ display: !values.certified ? 'none' : '' }}>
-				<Radio.Group onChange={onChange} value={values.nominatedFor} name='certifiedFor'>
+				<Radio.Group onChange={onChange} value={values.certifiedFor} name='certifiedFor'>
 					<Radio value={'song'}>Song</Radio>
 					<Radio value={'album'}>Album</Radio>
 				</Radio.Group>

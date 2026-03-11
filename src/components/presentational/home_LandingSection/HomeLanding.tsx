@@ -29,7 +29,7 @@ const LandingSection = () => {
 					STREETRUNNER
 				</Title>
 				<Text className={Style.SubText}>
-					Nine time Grammy nominated producer and award winner.{' '}
+					Fifteen time Grammy nominated producer and award winner.{' '}
 					<span onClick={() => navigate(routes.ABOUT)}>READ MORE</span>
 				</Text>
 

@@ -47,7 +47,7 @@ export default function Table(props: TableProps) {
 			const children = (
 				<ul className={Style.ItemList}>
 					{childrenData.map((item) => (
-						<li>
+						<li key={item[0]}>
 							<strong>{item[0].toUpperCase()}:</strong> {item[1] as string}
 						</li>
 					))}
@@ -66,7 +66,7 @@ export default function Table(props: TableProps) {
 
 	return (
 		<>
-			<AntDTable className={Style.Desktop} dataSource={rows} columns={columns} pagination={false} />
+			<AntDTable className={Style.Desktop} dataSource={rows} columns={columns} pagination={false} rowKey={(record: any) => record.tableItem ?? record.key ?? JSON.stringify(record)} />
 			{/* Table turns into collapsing accordion panels on Mobile */}
 			<Collapse className={Style.Mobile}>
 				{mobileCollapseData.map((item: any) => (

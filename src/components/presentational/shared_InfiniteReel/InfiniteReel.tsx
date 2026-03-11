@@ -42,8 +42,8 @@ const InfiniteReel = (): JSX.Element | boolean | null => {
 					} as React.CSSProperties
 				}>
 				<div className={Style.InfiniteReelInner}>
-					{[...reelPhotos, ...reelPhotos, ...reelPhotos].map((photo) => (
-						<img src={photo.secure_url} key={`${Math.random()}`} alt={`${photo._id}_song-cover`} />
+					{[...reelPhotos, ...reelPhotos, ...reelPhotos].map((photo, i) => (
+						<img src={photo.secure_url} key={`${photo._id}_${i}`} alt={`${photo._id}_song-cover`} />
 					))}
 				</div>
 			</div>

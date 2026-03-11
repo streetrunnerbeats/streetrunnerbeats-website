@@ -1,11 +1,19 @@
-import { riaaCerts } from 'data';
+import * as React from 'react';
+import { audioAPI } from 'apis';
+import { Song } from 'types';
 import { Card, Table, TableItem } from 'components';
 
 export default function RIAACertificationsTable() {
-	/** 
-    Information about the columns. This data must match the keys of the data being 
-    managed from the import file. This is not used in the dropdowns that appear on mobile
-     */
+	const [certifiedSongs, setCertifiedSongs] = React.useState<Song[]>([]);
+
+	React.useEffect(() => {
+		async function fetchCertified() {
+			const data = await audioAPI.fetchSongs('&certified=true');
+			if (data?.songs) setCertifiedSongs(data.songs);
+		}
+		fetchCertified();
+	}, []);
+
 	const columns = [
 		{
 			title: 'Song / Album',
@@ -23,27 +31,33 @@ export default function RIAACertificationsTable() {
 			key: 'type',
 		},
 		{
-			title: 'Award',
-			dataIndex: 'award',
-			key: 'award',
-		},
-		{
 			title: 'Year',
 			dataIndex: 'year',
 			key: 'year',
 		},
 	];
 
-	const tableData = riaaCerts.map((item) => {
+	const tableData = certifiedSongs.map((song: Song) => {
+		const isAlbum = song.certifiedFor?.toLowerCase() === 'album';
+		const itemName = isAlbum ? song.album.title : song.title;
+		const img = song.photo?.secure_url || song.album?.photo?.secure_url || '';
+
 		return {
-			...item,
-			tableItem: <TableItem img={item.img} item={item.item} />,
+			key: song._id,
+			item: itemName,
+			artist: song.artist,
+			type: isAlbum ? 'Album' : 'Song',
+			year: song.year,
+			img,
+			tableItem: <TableItem img={img} item={itemName} />,
 		};
 	});
 
+	if (tableData.length === 0) return null;
+
 	return (
 		<Card title='RIAA Certifications'>
-			<Table columns={columns} rows={tableData} mobileKeys={['item', 'award']} />
+			<Table columns={columns} rows={tableData} mobileKeys={['item', 'type']} />
 		</Card>
 	);
 }

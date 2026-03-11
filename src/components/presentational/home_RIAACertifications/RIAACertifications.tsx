@@ -16,6 +16,7 @@ const RIAACertification = () => {
 
 	async function fetchSongs() {
 		let data = await audioAPI.fetchSongs('&certified=true');
+		if (!data) return;
 		let { songs } = data;
 
 		if (songs) {
@@ -37,7 +38,7 @@ const RIAACertification = () => {
 						.sort((a, b) => (a > b ? -1 : 1))
 						.map((panel: any) => {
 							return (
-								<Panel header={panel[0]} key={`${Math.random()}`}>
+								<Panel header={panel[0]} key={panel[0]}>
 									{panel[1]
 										.sort((a: Song, b: Song) => (a.album.title < b.album.title ? -1 : 1))
 										.map((song: Song, i: number) => {
