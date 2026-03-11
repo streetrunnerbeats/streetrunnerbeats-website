@@ -14,12 +14,29 @@ const SelectCertificationSection = ({ onChange, values }: SongFormInterface) => 
 				</Checkbox>
 			</Form.Item>
 
-			<Form.Item name='certifiedFor' style={{ display: !values.certified ? 'none' : '' }}>
-				<Radio.Group onChange={onChange} value={values.certifiedFor} name='certifiedFor'>
-					<Radio value={'song'}>Song</Radio>
-					<Radio value={'album'}>Album</Radio>
-				</Radio.Group>
-			</Form.Item>
+			<div style={{ display: !values.certified ? 'none' : '' }}>
+				<p>Certified For:</p>
+				<Form.Item name='certifiedFor'>
+					<Radio.Group onChange={onChange} value={values.certifiedFor} name='certifiedFor'>
+						<Radio value={'song'}>Song</Radio>
+						<Radio value={'album'}>Album</Radio>
+					</Radio.Group>
+				</Form.Item>
+
+				<p>Award:</p>
+				<Form.Item name='certifiedAward'>
+					<Radio.Group onChange={onChange} value={values.certifiedAward} name='certifiedAward'>
+						<Radio value={'Gold'}>Gold</Radio>
+						<Radio value={'Platinum'}>Platinum</Radio>
+						<Radio value={'2x Platinum'}>2x Platinum</Radio>
+						<Radio value={'3x Platinum'}>3x Platinum</Radio>
+						<Radio value={'4x Platinum'}>4x Platinum</Radio>
+						<Radio value={'5x Platinum'}>5x Platinum</Radio>
+						<Radio value={'6x Platinum'}>6x Platinum</Radio>
+						<Radio value={'Diamond'}>Diamond</Radio>
+					</Radio.Group>
+				</Form.Item>
+			</div>
 		</div>
 	);
 };

@@ -40,7 +40,7 @@ export default function Table(props: TableProps) {
 
 			// Converts our object into an array and alos filters out the keys that were used for the label
 			const childrenData = Object.entries(row).filter(
-				(row) => !mobileKeys.includes(row[0]) && row[0] !== 'tableItem' && row[0] !== 'img'
+				(row) => !mobileKeys.includes(row[0]) && row[0] !== 'tableItem' && row[0] !== 'img' && row[0] !== 'key'
 			);
 
 			// Puts this remaining data into a list that can be inserted as children for the collapse item

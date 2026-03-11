@@ -27,6 +27,7 @@ const initialState: NewSongInputInterface = {
 	audio: null,
 	certified: false,
 	certifiedFor: 'song',
+	certifiedAward: 'Gold',
 	existingAlbum: null,
 	newAlbumTitle: '',
 	newAlbumArtist: '',

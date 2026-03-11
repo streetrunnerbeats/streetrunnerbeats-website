@@ -55,6 +55,7 @@ export type Song = {
 
 	certified: boolean; // default false
 	certifiedFor?: 'Song' | 'album';
+	certifiedAward?: string;
 	//
 	lastUpdated: string;
 	createdAt: string;

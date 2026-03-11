@@ -3,6 +3,7 @@ export interface NewSongInputInterface {
 	audio?: any;
 	certified: boolean;
 	certifiedFor?: 'none' | 'album' | 'song';
+	certifiedAward?: string;
 	existingAlbum?: string | null;
 	newAlbumTitle?: string | null;
 	newAlbumPhoto?: string | null;

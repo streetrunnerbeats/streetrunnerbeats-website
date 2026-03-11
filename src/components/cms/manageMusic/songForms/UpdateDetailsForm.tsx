@@ -24,6 +24,7 @@ const UpdateDetails = ({ song }: { song: Song }) => {
 
 			certified: song.certified,
 			certifiedFor: song.certifiedFor,
+			certifiedAward: song.certifiedAward || 'Gold',
 
 			nominated: song.nominated,
 			nominatedAward: song.nominatedAward === ('null' || '') ? '' : song.nominatedAward,
