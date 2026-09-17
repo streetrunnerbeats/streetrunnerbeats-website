@@ -3,6 +3,7 @@
 .LandingWrapper {
 	height: 90vh;
 	width: 100%;
+	background-image: url('../../../assets/photos/landing_2Crop.jpeg');
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -45,6 +46,8 @@
 	}
 
 	@media only screen and (max-width: '768px') {
+		background-image: url('../../../assets/photos/landing_mobile.jpeg');
+
 		.Wrapper {
 			.Title {
 				font-size: 7.6vw;

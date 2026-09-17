@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { Row, Col, Typography } from 'antd';
 
 // ==> Project Imports
-import { LandingHeader } from 'assets';
 import { Button, Overlay } from 'components';
 import routes from 'routes';
 
@@ -18,11 +17,7 @@ const LandingSection = () => {
 	const navigate = useNavigate();
 
 	return (
-		<Row
-			className={Style.LandingWrapper}
-			style={{ backgroundImage: `url(${LandingHeader})` }}
-			align='middle'
-			justify={'center'}>
+		<Row className={Style.LandingWrapper} align='middle' justify={'center'}>
 			<Overlay type='light' />
 			<Col span='16' className={Style.Wrapper}>
 				<Title className={Style.Title} level={1}>
